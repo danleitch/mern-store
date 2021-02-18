@@ -1,7 +1,7 @@
 Welcome to my store
 
 To install and run the program.
-Launch VS Code and navigate to the "backend Directory" open up the CLI and type " npm install " then "npm start"
+Launch VS Code and navigate to the "backend Directory" open up the CLI and type *"npm install " then "npm start"*
 Then cd in the fontend open up the CLI and type *"npm install " then "npm start"*
 
 
