@@ -10,10 +10,8 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-            ...helmet.contentSecurityPolicy.getDefaultDirectives()
-        },
+    helmet({
+        contentSecurityPolicy: false,
     })
 );
 
