@@ -9,7 +9,7 @@ function Register() {
 
 
     const clickHandler = () => {
-        axios.post('http://localhost:5000/user/login', { email: inputEmailData, password: inputPasswordData })
+        axios.post('http://localhost:5000/user/new', { email: inputEmailData, password: inputPasswordData })
             .then(function (response) {
 
                 //Token 
