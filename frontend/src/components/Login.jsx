@@ -21,24 +21,24 @@ const Login = () => {
     ///Login
     const clickHandler = () => {
         dispatch(login(inputEmailData, inputPasswordData))
-        // axios.post('http://localhost:5000/user/login', { email: inputEmailData, password: inputPasswordData })
-        //     .then(function (response) {
+        axios.post('/user/login', { email: inputEmailData, password: inputPasswordData })
+            .then(function (response) {
 
-        //         //Token 
-        //         const rawToken = response.data.token;
-        //         localStorage.setItem('userToken', rawToken);
-        //         //Login State
-        //         // setLogin(!!rawToken);
+                //Token 
+                const rawToken = response.data.token;
+                localStorage.setItem('userToken', rawToken);
+                //Login State
+                // setLogin(!!rawToken);
 
-        //         //Retrieve the todo list 
-        //         console.log("login Successfull");
-        //         addToCart();
+                //Retrieve the todo list 
+                console.log("login Successfull");
+                addToCart();
 
-        //     })
-        //     // handle error
-        //     .catch(function (error) {
-        //         console.error(error + "Problem on Post");
-        //     });
+            })
+            // handle error
+            .catch(function (error) {
+                console.error(error + "Problem on Post");
+             });
 
     }
 
