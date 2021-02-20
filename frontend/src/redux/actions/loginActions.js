@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const login = (email, password) => async (dispatch, getState) => {
 
-  const { data } = await axios.post('http://localhost:5000/user/login', { email, password });
+  const { data } = await axios.post('http://localhost:3000/user/login', { email, password });
 
   dispatch({
     type: actionTypes.LOGIN,
