@@ -21,7 +21,8 @@ function Register() {
                 // setLogin(!!rawToken);
 
                 //Retrieve the todo list 
-                console.log("login Successfull");
+                console.log("User Created");
+                window.location.reload(false);
 
             })
             // handle error
