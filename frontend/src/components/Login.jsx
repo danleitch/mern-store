@@ -12,11 +12,10 @@ import { useDispatch } from "react-redux";
 // Actions
 import { login } from "../redux/actions/loginActions";
 
-
-
-
 const Login = () => {
     const dispatch = useDispatch();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     ///Login
     const clickHandler = () => {
@@ -27,6 +26,7 @@ const Login = () => {
                 //Token 
                 const rawToken = response.data.token;
                 localStorage.setItem('userToken', rawToken);
+                setIsLoggedIn(true);
                 //Login State
                 // setLogin(!!rawToken);
 
@@ -38,7 +38,7 @@ const Login = () => {
             // handle error
             .catch(function (error) {
                 console.error(error + "Problem on Post");
-             });
+            });
 
     }
 
@@ -65,8 +65,8 @@ const Login = () => {
 
 
     // Login Data Handlers Variables
-    let inputEmailData = "dan@gmail.com";
-    let inputPasswordData = "yesplease123";
+    let inputEmailData = "";
+    let inputPasswordData = "";
 
     const inputEmailHandler = (e) => {
         const rawInputData = (e.target.value);
@@ -94,18 +94,30 @@ const Login = () => {
 
         <li>
             <Link to="/" className="cart__link">
-                <i className="fas fa-sign-in-alt"></i>
+                {!isLoggedIn &&
+                    <i className="fas fa-sign-in-alt"></i>
+                }
                 <span>
                     <form>
-                        <label>
-                            Login:
-                            <input type="text" class="input" placeholder="Email" onChange={inputEmailHandler} />
-                            <input type="password" class="input" onChange={inputPasswordHandler} />
-                        </label>
-                        <input type="submit" value="Submit" onClick={clickHandler} />
-                        <Logout />
 
-                        <button onClick={registerHandler}>Register</button>
+                        {!isLoggedIn &&
+                            <label>
+                                Login:
+                                    <input type="text" class="input" placeholder="Email" onChange={inputEmailHandler} />
+                                <input type="password" class="input" placeholder="Password" onChange={inputPasswordHandler} />
+                            </label>
+                        }
+                        {!isLoggedIn &&
+                            <input type="submit" value="Submit" onClick={clickHandler} />
+                        }
+
+                        {isLoggedIn &&
+                            <Logout />
+                        }
+
+                        {!isLoggedIn &&
+                            <button onClick={registerHandler}>Register</button>
+                        }
 
                     </form>
                 </span>
