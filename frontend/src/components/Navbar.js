@@ -31,7 +31,7 @@ const Navbar = ({ click }) => {
 
         {email &&
           <li className="name_text">
-            <h5 className="cart__link">{email}</h5>
+            <h5 className="cart__link">You are currently logged in as {email}</h5>
           </li>
         }
 

@@ -1,0 +1,12 @@
+.links {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 1.2rem;
+    /* display: flex;
+    align-items: center; */
+    margin: 0.3rem;
+}
+
+.spacing {
+    margin: 0.2rem;
+}

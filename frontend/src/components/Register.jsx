@@ -22,7 +22,9 @@ function Register() {
 
                 //Retrieve the todo list 
                 console.log("User Created");
+                alert("You Have Successfully Registered ... Redirecting to Home o you can Login ")
                 window.location.reload(false);
+
 
             })
             // handle error

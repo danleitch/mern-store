@@ -8,6 +8,8 @@ import axios from "axios";
 import Logout from './Logout';
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
+import "./LogIn.css";
+
 
 // Actions
 import { login } from "../redux/actions/loginActions";
@@ -102,13 +104,13 @@ const Login = () => {
 
                         {!isLoggedIn &&
                             <label>
-                                Login:
-                                    <input type="text" class="input" placeholder="Email" onChange={inputEmailHandler} />
-                                <input type="password" class="input" placeholder="Password" onChange={inputPasswordHandler} />
+                                <span className="spacing">Login:</span>
+                                <input className="spacing" type="text" class="input" placeholder="Email" onChange={inputEmailHandler} />
+                                <input className="spacing" type="password" class="input" placeholder="Password" onChange={inputPasswordHandler} />
                             </label>
                         }
                         {!isLoggedIn &&
-                            <input type="submit" value="Submit" onClick={clickHandler} />
+                            <Link className="links" onClick={clickHandler}>Submit</Link>
                         }
 
                         {isLoggedIn &&
@@ -116,7 +118,8 @@ const Login = () => {
                         }
 
                         {!isLoggedIn &&
-                            <button onClick={registerHandler}>Register</button>
+                            //<button onClick={registerHandler}>Register</button>
+                            <Link className="links" onClick={registerHandler}>Register</Link>
                         }
 
                     </form>

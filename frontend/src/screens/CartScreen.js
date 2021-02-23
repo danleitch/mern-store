@@ -63,7 +63,7 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+            <button onClick={() => alert("This button would take you too PayFast's payment portal. For more info https://www.payfast.co.za/integration/pay-now-buttons")} >Proceed To Checkout</button>
           </div>
         </div>
       </div>
