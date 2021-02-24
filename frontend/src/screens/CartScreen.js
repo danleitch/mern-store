@@ -2,6 +2,8 @@ import "./CartScreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import Payment from "./Payment.jsx";
+import { render } from '@testing-library/react';
 
 // Components
 import CartItem from "../components/CartItem";
@@ -35,6 +37,13 @@ const CartScreen = () => {
       .toFixed(2);
   };
 
+  // Handle Modal 
+  const modalHandler = () => {
+    render(<Payment />)
+  }
+
+
+
   return (
     <>
       <div className="cartscreen">
@@ -63,7 +72,7 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button onClick={() => alert("This button would take you too PayFast's payment portal. For more info https://www.payfast.co.za/integration/pay-now-buttons")} >Proceed To Checkout</button>
+            <button onClick={modalHandler} >Proceed To Checkout</button>
           </div>
         </div>
       </div>

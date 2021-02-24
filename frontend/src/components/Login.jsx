@@ -35,6 +35,7 @@ const Login = () => {
                 //Retrieve the todo list 
                 console.log("login Successfull");
                 addToCart();
+                alert("You Are Now Logged In")
 
             })
             // handle error
@@ -118,7 +119,6 @@ const Login = () => {
                         }
 
                         {!isLoggedIn &&
-                            //<button onClick={registerHandler}>Register</button>
                             <Link className="links" onClick={registerHandler}>Register</Link>
                         }
 
